@@ -8,5 +8,5 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/punitg862/SPMproject.git', :tag => s.version.to_s }
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.4'
-  s.source_files = 'Sources/SPMproject/**/*'
+  s.source_files = 'Sources/SPMproject/**/*.{swift}'
 end
