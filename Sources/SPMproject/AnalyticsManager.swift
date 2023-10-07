@@ -6,7 +6,7 @@ import AEPCore
 import AEPServices
 import Foundation
 
-public class AnalyticsManager {
+public class AnalyticsManager : Any {
     
     private let assuranceSessionUrl = ""
     func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String) {
