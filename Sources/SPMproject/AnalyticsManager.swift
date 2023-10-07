@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 
 
-class AnalyticsManager {
+public class AnalyticsManager {
     
     func sendAnalyticsData(with sourceName: ScreenName) {
         print(sourceName.rawValue)
