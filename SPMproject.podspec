@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SPMproject"
-  s.version          = "1.0.2"
+  s.version          = "1.0.3"
   s.summary          = "SPMproject use to support Swift package and pod support"
   s.homepage         = "https://github.com/punitg862/SPMproject"
   s.license          = { :type => "MIT", :file => "LICENSE" }

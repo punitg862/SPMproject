@@ -4,8 +4,6 @@
 import AEPAssurance
 import AEPCore
 import AEPServices
-import AEPIdentity
-import AEPLifecycle
 import Foundation
 
 public class AnalyticsManager {
