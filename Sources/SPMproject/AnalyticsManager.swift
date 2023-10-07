@@ -8,7 +8,9 @@ import Foundation
 
 public class AnalyticsManager {
     
-    public init() {}
+    let shared: AnalyticsManager = AnalyticsManager()
+    
+    private init() {}
     
     private let assuranceSessionUrl = ""
     public func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String) {
