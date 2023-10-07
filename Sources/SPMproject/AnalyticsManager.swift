@@ -11,14 +11,14 @@ public class AnalyticsManager {
     public init() {}
     
     private let assuranceSessionUrl = ""
-    func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String) {
+    public func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String) {
         
         MobileCore.setLogLevel(logLevel)
         
         MobileCore.configureWith(appId: ENVIRONMENT_FILE_ID)
     }
     
-    func sendAnalyticsData(with sourceName: ScreenName) {
+    public func sendAnalyticsData(with sourceName: ScreenName) {
         print(sourceName.rawValue)
         
         if let url = URL(string: self.assuranceSessionUrl) {
