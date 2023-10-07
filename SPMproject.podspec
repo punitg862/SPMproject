@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SPMproject'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of SPMproject.'
   s.homepage         = 'https://github.com/punitg862/SPMproject'
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
