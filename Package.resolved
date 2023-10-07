@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
+        "package": "AEPAssurance",
+        "repositoryURL": "https://github.com/adobe/aepsdk-assurance-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "55c6419494d9cb88774a6a382d4b72756af95900",
+          "version": "4.0.0"
+        }
+      },
+      {
         "package": "AEPCore",
         "repositoryURL": "https://github.com/adobe/aepsdk-core-ios.git",
         "state": {
           "branch": null,
-          "revision": "5820b1d0136116e85738b220d110b411a904932d",
-          "version": "3.9.0"
+          "revision": "3bf920dde9e4f97fa4da8a5204f73f8773fd5953",
+          "version": "4.1.0"
         }
       },
       {
@@ -15,8 +24,8 @@
         "repositoryURL": "https://github.com/adobe/aepsdk-rulesengine-ios.git",
         "state": {
           "branch": null,
-          "revision": "583a8e6d060c0437fa5e40b1367d382b64a96f04",
-          "version": "1.2.3"
+          "revision": "0923ec707340874000e06ad2926c5006ddfbc4c9",
+          "version": "4.0.0"
         }
       }
     ]

@@ -13,20 +13,21 @@ let package = Package(
             targets: ["SPMproject"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/adobe/aepsdk-core-ios.git", .upToNextMajor(from: "3.0.0"))
+        .package(url: "https://github.com/adobe/aepsdk-core-ios.git", .upToNextMajor(from: "4.1.0")),
+        .package(url: "https://github.com/adobe/aepsdk-assurance-ios.git", .upToNextMajor(from: "4.0.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "SPMproject",
-            dependencies: [
-                            .product(name: "AEPCore", package: "aepsdk-core-ios"),
+            dependencies: [.product(name: "AEPCore", package: "aepsdk-core-ios"),
                             .product(name: "AEPIdentity", package: "aepsdk-core-ios"),
                             .product(name: "AEPSignal", package: "aepsdk-core-ios"),
                             .product(name: "AEPLifecycle", package: "aepsdk-core-ios"),
                             .product(name: "AEPServices", package: "aepsdk-core-ios"),
-                        ]),
+                            .product(name: "AEPAssurance", package: "aepsdk-assurance-ios")]
+        ),
         .testTarget(
             name: "SPMprojectTests",
             dependencies: ["SPMproject"]),
