@@ -8,7 +8,7 @@ import Foundation
 
 public class AnalyticsManager {
     
-    public let shared: AnalyticsManager = AnalyticsManager()
+    static let shared: AnalyticsManager = AnalyticsManager()
     
     private init() {}
     
