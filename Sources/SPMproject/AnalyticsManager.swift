@@ -12,7 +12,7 @@ public class AnalyticsManager: NSObject {
     
     public static let shared = AnalyticsManager()
     
-    private init() { }
+    private override init() { }
     
     public func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String) {
         
