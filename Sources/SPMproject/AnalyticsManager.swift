@@ -6,13 +6,14 @@ import AEPCore
 import AEPServices
 import Foundation
 
-public class AnalyticsManager: NSObject {
+protocol AnalyticsManagerProtocol {
+    func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String)
+    func setAssuranceSessionUrl(withUrl: String)
+}
+
+class AnalyticsManager: AnalyticsManagerProtocol {
     
-    static let shared = AnalyticsManager()
-    
-    private override init() {}
-    
-    public func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String) {
+    func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String) {
         
         MobileCore.setLogLevel(logLevel)
         
@@ -25,7 +26,7 @@ public class AnalyticsManager: NSObject {
         }
     }
     
-    public func sendAnalyticsData(with sourceName: ScreenName) {
+    func sendAnalyticsData(with sourceName: ScreenName) {
         print(sourceName.rawValue)
         
         MobileCore.setPrivacyStatus(PrivacyStatus.optedOut)
