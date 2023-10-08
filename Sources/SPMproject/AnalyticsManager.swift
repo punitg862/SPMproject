@@ -14,20 +14,33 @@ public class AnalyticsManager: NSObject {
     
     private override init() { }
     
-    public func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String) {
+    public func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String, startSession: Bool = true, sessionUrl: String? = nil) {
         
         MobileCore.setLogLevel(logLevel)
-        
         MobileCore.configureWith(appId: ENVIRONMENT_FILE_ID)
+        
+        guard sessionUrl != nil, let url = sessionUrl else { return }
+        self.setAssuranceSessionUrl(withUrl: url)
     }
     
-    func setAssuranceSessionUrl(withUrl: String) {
+    public func setAssuranceSessionUrl(withUrl: String) {
         if let url = URL(string: withUrl) {
             Assurance.startSession(url: url)
         }
     }
     
-    func sendAnalyticsData(with sourceName: ScreenName) {
+    public func trackEvent(with eventType: TrackEvent, sourceName: ScreenName, customeData: [String : Any]?) {
+        
+        switch eventType {
+        case .action:
+            MobileCore.track(action: "", data: customeData)
+        case .state:
+            MobileCore.track(state: "", data: customeData)
+        
+        }
+    }
+
+    func dummy(with sourceName: ScreenName) {
         print(sourceName.rawValue)
         
         MobileCore.setPrivacyStatus(PrivacyStatus.optedOut)

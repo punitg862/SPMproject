@@ -9,3 +9,8 @@ public enum ScreenName: String {
     case preloginScreen
     
 }
+
+
+public enum TrackEvent {
+    case action, state
+}
