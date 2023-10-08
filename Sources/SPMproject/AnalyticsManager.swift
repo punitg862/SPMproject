@@ -6,13 +6,12 @@ import AEPCore
 import AEPServices
 import Foundation
 
-public class AnalyticsManager {
+public class AnalyticsManager: NSObject {
     
-    static let shared: AnalyticsManager = AnalyticsManager()
+    static let shared = AnalyticsManager()
     
-    private init() {}
+    private override init() {}
     
-    private let assuranceSessionUrl = ""
     public func registerAdobe(logLevel: LogLevel, ENVIRONMENT_FILE_ID: String) {
         
         MobileCore.setLogLevel(logLevel)
@@ -20,12 +19,14 @@ public class AnalyticsManager {
         MobileCore.configureWith(appId: ENVIRONMENT_FILE_ID)
     }
     
-    public func sendAnalyticsData(with sourceName: ScreenName) {
-        print(sourceName.rawValue)
-        
-        if let url = URL(string: self.assuranceSessionUrl) {
+    func setAssuranceSessionUrl(withUrl: String) {
+        if let url = URL(string: withUrl) {
             Assurance.startSession(url: url)
         }
+    }
+    
+    public func sendAnalyticsData(with sourceName: ScreenName) {
+        print(sourceName.rawValue)
         
         MobileCore.setPrivacyStatus(PrivacyStatus.optedOut)
         MobileCore.setPrivacyStatus(PrivacyStatus.optedIn)
